@@ -1,0 +1,847 @@
+<html>
+<!-- Author: Nuruzzaman    -->
+<!-- e-mail: nur@fnal.gov  -->
+<!-- Date  : 06/08/2016    -->
+
+<head>
+    <META http-equiv='refresh' content='300'>
+    <META HTTP-EQUIV='CACHE-CONTROL' CONTENT='NO-CACHE'>
+    <META HTTP-EQUIV='PRAGMA' CONTENT='NO-CACHE'>
+    <title>MINERvA Shift</title>
+    <link rel='SHORTCUT ICON' href='images/ShiftLowRes.png' background='white' type='image/x-icon'>
+
+    <style type="text/css">
+        tab1 { padding-left: 6.0%; auto;}
+        tab2 { padding-left: 2.1%; auto;}
+        tab3 { padding-left: 5.15%; auto;}
+        tab4 { padding-left: 18.0%; auto;}
+        tab5 { padding-left: 10.65%; auto;}
+     </style>
+<meta name="viewport" content="initial-scale=1">
+<style>
+html {
+  text-align: left;
+  font-size: 5vw;    
+}
+body {
+  font-family: arial, sans-serif;
+  font-size: 5vw;    
+}
+input, button, select, option, textarea {
+    font-size: 1.5vw;
+}
+</style>
+
+<style type="text/css">
+A:link { COLOR: blue; TEXT-DECORATION: none; font-weight: none }
+A:visited { COLOR: DarkViolet; TEXT-DECORATION: none; font-weight: none }
+A:active { COLOR: black; TEXT-DECORATION: none }
+A:hover { COLOR: red; TEXT-DECORATION: underline; font-weight: none }
+</style>
+
+<style type="text/css">
+img {margin:0.3vw;padding:0;float:left}
+</style>
+
+<!-- Start Clock -->
+<script type="text/javascript">
+tday=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+tmonth=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+<style>
+#clockbox {
+   font-size: 1.6vw; color:darkgreen; 
+}
+#textHead {
+   font-size: 3.0vw;
+}
+#textLinks {
+   font-size: 2.0vw;
+   background-color:#e5f2ff
+}
+#textLinks2 {
+   font-size: 2.0vw;
+   background-color:#d9ffcc
+}
+#textMed {
+   font-size: 1.8vw;
+}
+#textMed2 {
+   font-size: 1.6vw;
+}
+#textOther {
+   font-size: 1.5vw;
+}
+</style>
+
+
+<script type="text/javascript" src="reloader.js"></script>
+
+<style>
+@keyframes heartbeat {
+  0% {transform:  scale(0.3);}
+  50% {transform: scale(0.6);}
+  100% {transform: scale(0.3);}
+
+}
+.beat {
+          animation: heartbeat 0.7s infinite;
+}
+</style>
+
+<script language="JavaScript" type="text/javascript">
+<!--- PASSWORD PROTECTION SCRIPT
+
+function TheLogin() {
+
+var password = 'minerva';
+
+if (this.document.login.pass.value == password) {
+  top.location.href="index.html";
+}
+else {
+  location.href="rc.html";
+  }
+}
+
+// End hiding --->
+</script>
+
+<script type="text/javascript">
+var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+
+function loadFile() {
+    reader.open('get', 'images/shift_info.html', true); 
+    reader.onreadystatechange = displayContents;
+    reader.send(null);
+}
+function displayContents() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileRC() {
+    reader.open('get', 'images/rc_time.txt', true); 
+    reader.onreadystatechange = displayContentsRC;
+    reader.send(null);
+}
+function displayContentsRC() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('rc_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+function loadFileGMBrowser() {
+    reader.open('get', 'images/gmbrowser_time.txt', true); 
+    reader.onreadystatechange = displayContentsGMBrowser;
+    reader.send(null);
+}
+function displayContentsGMBrowser() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('GMBrowser_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileMINOS() {
+    reader.open('get', 'images/minos_time.txt', true); 
+    reader.onreadystatechange = displayContentsMINOS;
+    reader.send(null);
+}
+function displayContentsMINOS() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('MINOS_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileVETO() {
+    reader.open('get', 'images/veto_time.txt', true); 
+    reader.onreadystatechange = displayContentsVETO;
+    reader.send(null);
+}
+function displayContentsVETO() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('VETO_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileShiftSummary() {
+    reader.open('get', 'images/shift_summary_time.txt', true); 
+    reader.onreadystatechange = displayContentsShiftSummary;
+    reader.send(null);
+}
+function displayContentsShiftSummary() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('ShiftSummary_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<a name='top'>
+<table border='0' width='93%' align='left'>
+<td style="width:99%">
+
+<div id="textHead" align='center'>
+<a href="index.html"><img src="images/ShiftLowRes.png" width="4.0%" height="4.0%" align="left"></a><b>MINERvA Shift</b>
+</div>
+
+
+<!--Information for Expert Shifter and SOS-->
+    <div id="textOther" align='center'>
+    <div id="main">
+    <input type="button" style="background-color:lightgreen" value="Pager: Expert Shifter - 630-996-0092, SOS - 630-255-4094. Click for More Info." onclick="loadFile()"/>
+</div></div>
+<!--/div-->
+
+
+</td>
+<td style="width:5%"><div class="beat" style="font-size:50px;color:red" align="right">&hearts;<!--&#9825;&#10084;--></div>
+</td>
+</table> 
+
+
+<div align="center" style="width:93%; margin:0;" id="clockbox"></div>
+<div style="line-height:50%;"><br></div>
+
+
+<!--Links-->
+<div id="textLinks" style="width:93%;">
+<a href='index.html'>HOME</a><tab3>
+<a href='rc.html'>RunControl</a><tab3>
+<a href='gmbrowser.html'>GMBrowser</a><tab3>
+<a href='minos.html'>MINOS</a><tab3>
+<a href='veto.html'>VetoHV</a><tab3>
+<a href='live.html'>LIVE</a><tab3>
+<u>ShiftSummary</u>
+</div>
+
+<div style="line-height:20%;"><br></div>
+
+<div id="textLinks2" style="width:93%;">
+<a href='links.html'>Links</a><tab2>
+<a href='http://dbweb0.fnal.gov/ECL/minerva/E/index' target="_blank">ECL</a><tab2>
+<a href='https://minervachat.slack.com/messages/minerva_shift/details/' target="_blank">Chat</a><tab2>
+<a href='https://cdcvs.fnal.gov/redmine/projects/minerva-ops/wiki/Minerva_Shift' target="_blank">Wiki</a><tab2>
+<!--a href='http://minerva-wbm.fnal.gov/minerva/echecklist/mininfo.php' target="_blank">e-checklist</a><tab2-->
+<a href='http://minerva-exp.fnal.gov/nusoft/echecklist/mininfo.php' target="_blank">echecklist</a><tab2>
+<a href='http://mnvevd1.fnal.gov/Glaucus/web/calendar2.html' target="_blank">Calendar</a><tab2>
+<a href='http://dbweb0.fnal.gov/ifbeam/numimon/Display' target="_blank">NuMI</a><tab2>
+<a href='http://minerva05.fnal.gov/Arachne/live.html' target="_blank">Arachne</a><tab2>
+<a href='web_status_A9_echecklist_minos_rocmuon.html' target="_blank">Misc.</a><tab2>
+<!--a href='https://www-bd.fnal.gov/Elog/' target="_blank">MCR</a><tab2-->
+<a href='http://minos-sb-cam01.fnal.gov/en/index.html' target="_blank">CAM-E</a><tab2>
+<a href='http://minervacam.fnal.gov/index.html?size=2&mode=0' target="_blank">CAM-U</a>
+</div>
+
+<div style="line-height:50%;"><br></div>
+
+<!--Images-->
+
+
+<table border='0' width='93%' align='left'>
+
+<tr>
+<td>
+<div id="textMed" id="text_ref" align='center' style="color:red">
+Reference Plots
+</div>
+</td>
+<td>
+<div id="textMed" align='center' style="color:blue">
+<div id="ShiftSummary_main" style="width: 15%; color:blue; display: table-cell;">
+<input type="button" style="background-color:#e6e6ff" value="Most Recent Plots" onclick="loadFileShiftSummary()"/>
+</div>
+</div>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref1').style.display = document.getElementById('text_ref1').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">DAQ Header</div></div>
+<!--p id="textOther" style="color:red" align="center">DAQ Header</p></div-->
+<div id="text_ref1" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there is a Readout Time above 200 ms (either on the plot or in the Overflow), note this run in the logbook.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='DAQ_Header'><a href="images/ref/DAQ_Header.gif">
+<img id="graph_minos" src='images/ref/DAQ_Header.gif' style="border:2px solid red;" width='99%' alt='DAQ_Header ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 31.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+If there is a Readout Time above 200 ms (either on the plot or in the Overflow), note this run in the logbook.
+</p-->
+</td>
+<td>
+<a name='DAQ_Header'><a href="images/DAQ_Header.gif">
+<img id="graph_minos" src='images/DAQ_Header.gif' style="border:2px solid blue;" width='99%' alt='DAQ_Header summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref2').style.display = document.getElementById('text_ref2').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Dead Boards</div></div>
+<div id="text_ref2" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there is a red square in these plots, check the GMBrowser to see if the box is still red. If it isn't, send an email to the ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td border="0" width='45%' align='left'>
+<a name='Dead_Boards'><a href="images/ref/Dead_Boards.gif">
+<img id="graph_minos" src='images/ref/Dead_Boards.gif' style="border:2px solid red;" width='99%' alt='Dead_Boards ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 92.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+If there is a red square in these plots, check the GMBrowser to see if the box is still red. If it isn't, send an email to the ES.
+</p-->
+</td>
+<td border="0" width='45%' align='left'>
+<a name='Dead_Boards'><a href="images/Dead_Boards.gif">
+<img id="graph_minos" src='images/Dead_Boards.gif' style="border:2px solid blue;" width='99%' alt='Dead_Boards ref. summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref3').style.display = document.getElementById('text_ref3').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">High Voltage</div></div>
+<div id="text_ref3" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+Left: If there are entries with HV &lt; 600 Volts, contact ES. Right: If there are entries outside the peak, contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div id="text_ref" style="display: none;">Left: If there are entries with HV &lt; 600 Volts, contact ES. Right: If there are entries outside the peak, contact ES.</div>
+<a name='High_Voltage'><a href="images/ref/High_Voltage.gif">
+<img id="graph_minos" src='images/ref/High_Voltage.gif' style="border:2px solid red;" width='99%' alt='High_Voltage ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 154.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+Left: If there are entries with HV &lt; 600 Volts, contact ES. Right: If there are entries outside the peak, contact ES.
+</p-->
+</td>
+<td>
+<a name='High_Voltage'><a href="images/High_Voltage.gif">
+<img id="graph_minos" src='images/High_Voltage.gif' style="border:2px solid blue;" width='99%' alt='High_Voltage summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref4').style.display = document.getElementById('text_ref4').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Numi Gate</div></div>
+<div id="text_ref4" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+These plots depend on beam intensity.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Num_Gate'><a href="images/ref/Num_Gate.gif">
+<img id="graph_minos" src='images/ref/Num_Gate.gif' style="border:2px solid red;" width='99%' alt='Num_Gate ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 215.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+These plots depend on beam intensity.
+</p-->
+</td>
+<td>
+<a name='Num_Gate'><a href="images/Num_Gate.gif">
+<img id="graph_minos" src='images/Num_Gate.gif' style="border:2px solid blue;" width='99%' alt='Num_Gate summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref5').style.display = document.getElementById('text_ref5').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Discriminators</div></div>
+<div id="text_ref5" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there is a high peak (at least twice as high as the rest of the entries), please contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Num_Discriminators'><a href="images/ref/Num_Discriminators.gif">
+<img id="graph_minos" src='images/ref/Num_Discriminators.gif' style="border:2px solid red;" width='99%' alt='Num_Discriminators ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 275.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+If there is a high peak (at least twice as high as the rest of the entries), please contact ES. 
+</p-->
+</td>
+<td>
+<a name='Num_Discriminators'><a href="images/Num_Discriminators.gif">
+<img id="graph_minos" src='images/Num_Discriminators.gif' style="border:2px solid blue;" width='99%' alt='Num_Discriminators summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref6').style.display = document.getElementById('text_ref6').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">CalPE per Time</div></div>
+<div id="text_ref6" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+There should be a gap before the distribution (0 entries at 0). If there is no gap between 0 and the start of the distribution, contact Nur or Howard.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Num_CalPE'><a href="images/ref/Num_CalPE.gif">
+<img id="graph_minos" src='images/ref/Num_CalPE.gif' style="border:2px solid red;" width='99%' alt='Num_CalPE ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 336.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+There should be a gap before the distribution (0 entries at 0). If there is no gap between 0 and the start of the distribution, contact Nur or Howard.
+</p-->
+</td>
+<td>
+<a name='Num_CalPE'><a href="images/Num_CalPE.gif">
+<img id="graph_minos" src='images/Num_CalPE.gif' style="border:2px solid blue;" width='99%' alt='Num_CalPE summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref7').style.display = document.getElementById('text_ref7').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Veto Wall Occupancy</div></div>
+<div id="text_ref7" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+The following channels should have entries: Top Left: 4 - 7, 27 - 30; Top Right: 1, 4, 6, 7, 25, 27, 28, 30; Bottom Left: 44 - 47, 51 - 54. The rest of the channels should be zero. If any channels are zero or especially hot or cold email Marianette or Dipak.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='VetoWallOccupancy'><a href="images/ref/VetoWallOccupancy.gif">
+<img id="graph_minos" src='images/ref/VetoWallOccupancy.gif' style="border:2px solid red;" width='99%' alt='VetoWallOccupancy ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 397.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+The following channels should have entries: Top Left: 4 - 7, 27 - 30; Top Right: 1, 4, 6, 7, 25, 27, 28, 30; Bottom Left: 44 - 47, 51 - 54. The rest of the channels should be zero. If any channels are zero or especially hot or cold email Marianette or Dipak.
+</p-->
+</td>
+<td>
+<a name='VetoWallOccupancy'><a href="images/VetoWallOccupancy.gif">
+<img id="graph_minos" src='images/VetoWallOccupancy.gif' style="border:2px solid blue;" width='99%' alt='VetoWallOccupancy summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref8').style.display = document.getElementById('text_ref8').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Veto Wall Correlation</div></div>
+<div id="text_ref8" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If one of these plots is completely white or one square is much hotter or colder than its neighbors, then contact Marianette or Dipak immediately.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='VetoWallCorrelation'><a href="images/ref/VetoWallCorrelation.gif">
+<img id="graph_minos" src='images/ref/VetoWallCorrelation.gif' style="border:2px solid red;" width='99%' alt='VetoWallCorrelation ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 458.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+If one of these plots is completely white or one square is much hotter or colder than its neighbors, then contact Marianette or Dipak immediately.
+</p-->
+</td>
+<td>
+<a name='VetoWallCorrelation'><a href="images/VetoWallCorrelation.gif">
+<img id="graph_minos" src='images/VetoWallCorrelation.gif' style="border:2px solid blue;" width='99%' alt='VetoWallCorrelation summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref9').style.display = document.getElementById('text_ref9').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits Not Fired Crate 0</div></div>
+<div id="text_ref9" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='NHits_NotFired_Crate0'><a href="images/ref/NHits_NotFired_Crate0.gif">
+<img id="graph_minos" src='images/ref/NHits_NotFired_Crate0.gif' style="border:2px solid red;" width='99%' alt='NHits_NotFired_Crate0 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 520.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='NHits_NotFired_Crate0'><a href="images/NHits_NotFired_Crate0.gif">
+<img id="graph_minos" src='images/NHits_NotFired_Crate0.gif' style="border:2px solid blue;" width='99%' alt='NHits_NotFired_Crate0 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref10').style.display = document.getElementById('text_ref10').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits Fired Crate 0</div></div>
+<div id="text_ref10" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='NHits_Fired_Crate0'><a href="images/ref/NHits_Fired_Crate0.gif">
+<img id="graph_minos" src='images/ref/NHits_Fired_Crate0.gif' style="border:2px solid red;" width='99%' alt='NHits_Fired_Crate0 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 581.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='NHits_Fired_Crate0'><a href="images/NHits_Fired_Crate0.gif">
+<img id="graph_minos" src='images/NHits_Fired_Crate0.gif' style="border:2px solid blue;" width='99%' alt='NHits_Fired_Crate0 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref11').style.display = document.getElementById('text_ref11').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits Not Fired Crate 1</div></div>
+<div id="text_ref11" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='NHits_NotFired_Crate1'><a href="images/ref/NHits_NotFired_Crate1.gif">
+<img id="graph_minos" src='images/ref/NHits_NotFired_Crate1.gif' style="border:2px solid red;" width='99%' alt='NHits_NotFired_Crate1 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 641.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='NHits_NotFired_Crate1'><a href="images/NHits_NotFired_Crate1.gif">
+<img id="graph_minos" src='images/NHits_NotFired_Crate1.gif' style="border:2px solid blue;" width='99%' alt='NHits_NotFired_Crate1 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref12').style.display = document.getElementById('text_ref12').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits Fired Crate 1</div></div>
+<div id="text_ref12" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='NHits_Fired_Crate1'><a href="images/ref/NHits_Fired_Crate1.gif">
+<img id="graph_minos" src='images/ref/NHits_Fired_Crate1.gif' style="border:2px solid red;" width='99%' alt='NHits_Fired_Crate1 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 703.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='NHits_Fired_Crate1'><a href="images/NHits_Fired_Crate1.gif">
+<img id="graph_minos" src='images/NHits_Fired_Crate1.gif' style="border:2px solid blue;" width='99%' alt='NHits_Fired_Crate1 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref13').style.display = document.getElementById('text_ref13').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits for Strip</div></div>
+<div id="text_ref13" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Numib_NHits_Strip'><a href="images/ref/Numib_NHits_Strip.gif">
+<img id="graph_minos" src='images/ref/Numib_NHits_Strip.gif' style="border:2px solid red;" width='99%' alt='Numib_NHits_Strip ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 764.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='Numib_NHits_Strip'><a href="images/Numib_NHits_Strip.gif">
+<img id="graph_minos" src='images/Numib_NHits_Strip.gif' style="border:2px solid blue;" width='99%' alt='Numib_NHits_Strip summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref14').style.display = document.getElementById('text_ref14').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">NHits for Bar</div></div>
+<div id="text_ref14" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Numib_NHits_Bar'><a href="images/ref/Numib_NHits_Bar.gif">
+<img id="graph_minos" src='images/ref/Numib_NHits_Bar.gif' style="border:2px solid red;" width='99%' alt='Numib_NHits_Bar ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 825.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='Numib_NHits_Bar'><a href="images/Numib_NHits_Bar.gif">
+<img id="graph_minos" src='images/Numib_NHits_Bar.gif' style="border:2px solid blue;" width='99%' alt='Numib_NHits_Bar summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref15').style.display = document.getElementById('text_ref15').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Avg Qhi Not Fired Crate 0</div></div>
+<div id="text_ref15" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='AvgQhi_NotFired_Crate0'><a href="images/ref/AvgQhi_NotFired_Crate0.gif">
+<img id="graph_minos" src='images/ref/AvgQhi_NotFired_Crate0.gif' style="border:2px solid red;" width='99%' alt='AvgQhi_NotFired_Crate0 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 886.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='AvgQhi_NotFired_Crate0'><a href="images/AvgQhi_NotFired_Crate0.gif">
+<img id="graph_minos" src='images/AvgQhi_NotFired_Crate0.gif' style="border:2px solid blue;" width='99%' alt='AvgQhi_NotFired_Crate0 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref16').style.display = document.getElementById('text_ref16').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Avg Qhi Fired Crate 0</div></div>
+<div id="text_ref16" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='AvgQhi_Fired_Crate0'><a href="images/ref/AvgQhi_Fired_Crate0.gif">
+<img id="graph_minos" src='images/ref/AvgQhi_Fired_Crate0.gif' style="border:2px solid red;" width='99%' alt='AvgQhi_Fired_Crate0 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 948.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='AvgQhi_Fired_Crate0'><a href="images/AvgQhi_Fired_Crate0.gif">
+<img id="graph_minos" src='images/AvgQhi_Fired_Crate0.gif' style="border:2px solid blue;" width='99%' alt='AvgQhi_Fired_Crate0 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref17').style.display = document.getElementById('text_ref17').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Avg Qhi Not Fired Crate 1</div></div>
+<div id="text_ref17" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='AvgQhi_NotFired_Crate1'><a href="images/ref/AvgQhi_NotFired_Crate1.gif">
+<img id="graph_minos" src='images/ref/AvgQhi_NotFired_Crate1.gif' style="border:2px solid red;" width='99%' alt='AvgQhi_NotFired_Crate1 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 1008.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='AvgQhi_NotFired_Crate1'><a href="images/AvgQhi_NotFired_Crate1.gif">
+<img id="graph_minos" src='images/AvgQhi_NotFired_Crate1.gif' style="border:2px solid blue;" width='99%' alt='AvgQhi_NotFired_Crate1 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref18').style.display = document.getElementById('text_ref18').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red">Avg Qhi Fired Crate 1</div></div>
+<div id="text_ref18" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='AvgQhi_Fired_Crate1'><a href="images/ref/AvgQhi_Fired_Crate1.gif">
+<img id="graph_minos" src='images/ref/AvgQhi_Fired_Crate1.gif' style="border:2px solid red;" width='99%' alt='AvgQhi_Fired_Crate1 ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 1069.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='AvgQhi_Fired_Crate1'><a href="images/AvgQhi_Fired_Crate1.gif">
+<img id="graph_minos" src='images/AvgQhi_Fired_Crate1.gif' style="border:2px solid blue;" width='99%' alt='AvgQhi_Fired_Crate1 summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref19').style.display = document.getElementById('text_ref19').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red"> Avg Qhi for Strip</div></div>
+<div id="text_ref19" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Numib_Qhi_Strip'><a href="images/ref/Numib_Qhi_Strip.gif">
+<img id="graph_minos" src='images/ref/Numib_Qhi_Strip.gif' style="border:2px solid red;" width='99%' alt='Numib_Qhi_Strip ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 1133.5%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='Numib_Qhi_Strip'><a href="images/Numib_Qhi_Strip.gif">
+<img id="graph_minos" src='images/Numib_Qhi_Strip.gif' style="border:2px solid blue;" width='99%' alt='Numib_Qhi_Strip summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+<!------------------------>
+
+<tr>
+<td colspan="2" style="padding:0;" >
+<hr style="border-top: dotted 0.4vw; color:green">
+<div onclick="document.getElementById('text_ref20').style.display = document.getElementById('text_ref20').style.display == 'none' ? 'block' : 'none';">
+<div id="textMed2" align='center' style="color:red"> Avg Qhi for Bar</div></div>
+<div id="text_ref20" style="display: none; font-weight: normal; color:red; font-weight: 10%; font-size: 1.5vw;">
+If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<a name='Numib_Qhi_Bar'><a href="images/ref/Numib_Qhi_Bar.gif">
+<img id="graph_minos" src='images/ref/Numib_Qhi_Bar.gif' style="border:2px solid red;" width='99%' alt='Numib_Qhi_Bar ref. summary plot is not available, wait few seconds.'></a>
+<!--p style="position: absolute; top: 1195.0%; left: 1.5%; width: 44%; padding: 1%; background-color: transparent; font-weight: normal; color:red; font-weight: 10%; font-size: 1.2vw;">
+ If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES.
+</p-->
+</td>
+<td>
+<a name='Numib_Qhi_Bar'><a href="images/Numib_Qhi_Bar.gif">
+<img id="graph_minos" src='images/Numib_Qhi_Bar.gif' style="border:2px solid blue;" width='99%' alt='Numib_Qhi_Bar summary plot is not available, wait few seconds.'></a>
+</td>
+</tr>
+
+
+
+</table> 
+
+<br>
+<table border='0' width='90%' align='left'>
+<tr>
+<!--td align="left">
+<div id="textOther" align='left'>Last Updated:</div>
+<div id="textOther" align='left'>
+<div id="ShiftSummary_main" style="width: 15%; color:magenta; display: table-cell;">
+<input type="button" style="background-color:#F9B7FF" value="ShiftSummary" onclick="loadFileShiftSummary()"/>
+</div>
+</div>
+</td-->
+</tr>
+
+<td align="right">
+<div id="textOther">
+<a href="#top">Go to top</a></div>
+</td>
+<tr>
+<td align="middle">
+<div id="textOther">Contact <a href="https://userweb.jlab.org/~nur/">Nuruzzaman</a> (<a href="mailto:nur@fnal.gov">nur@fnal.gov</a>) for problems and comments.<script language="Javascript">document.write(" Last modified: " + document.lastModified +"");
+</script><br><br></div>
+</td>
+</tr>
+</table> 
+
+
+</body>
+
+</html>

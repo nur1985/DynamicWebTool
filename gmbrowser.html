@@ -1,0 +1,539 @@
+<html>
+<!-- Author: Nuruzzaman    -->
+<!-- e-mail: nur@fnal.gov  -->
+<!-- Date  : 01/07/2015    -->
+
+<head>
+    <META http-equiv='refresh' content='60'>
+    <META HTTP-EQUIV='CACHE-CONTROL' CONTENT='NO-CACHE'>
+    <META HTTP-EQUIV='PRAGMA' CONTENT='NO-CACHE'>
+    <title>MINERvA Shift</title>
+    <link rel='SHORTCUT ICON' href='images/ShiftLowRes.png' background='white' type='image/x-icon'>
+
+    <style type="text/css">
+        tab1 { padding-left: 6.0%; auto;}
+        tab2 { padding-left: 2.1%; auto;}
+        tab3 { padding-left: 5.15%; auto;}
+        tab4 { padding-left: 75.0%; auto;}
+        tab5 { padding-left: 1.8%; auto;}
+     </style>
+<meta name="viewport" content="initial-scale=1">
+<style>
+html {
+  text-align: left;
+  font-size: 5vw;    
+}
+body {
+  font-family: arial, sans-serif;
+  font-size: 5vw;    
+}
+input, button, select, option, textarea {
+    font-size: 1.5vw;
+}
+</style>
+
+<style type="text/css">
+A:link { COLOR: blue; TEXT-DECORATION: none; font-weight: none }
+A:visited { COLOR: DarkViolet; TEXT-DECORATION: none; font-weight: none }
+A:active { COLOR: black; TEXT-DECORATION: none }
+A:hover { COLOR: red; TEXT-DECORATION: underline; font-weight: none }
+</style>
+
+<style type="text/css">
+img {margin:0.3vw;padding:0;float:left}
+</style>
+
+<!-- Start Clock -->
+<script type="text/javascript">
+tday=new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+tmonth=new Array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec");
+
+window.onload=function(){
+GetClock();
+setInterval(GetClock,1000);
+}
+</script>
+<style>
+#clockbox {
+   font-size: 1.6vw; color:darkgreen; 
+}
+#textHead {
+   font-size: 3.0vw;
+}
+#textLinks {
+   font-size: 2.0vw;
+   background-color:#e5f2ff
+}
+#textLinks2 {
+   font-size: 2.0vw;
+   background-color:#d9ffcc
+}
+#textMed {
+   font-size: 1.8vw;
+}
+#textMed2 {
+   font-size: 1.6vw;
+}
+#textOther {
+   font-size: 1.5vw;
+}
+</style>
+
+
+<script type="text/javascript" src="reloader.js"></script>
+
+<style>
+@keyframes heartbeat {
+  0% {transform:  scale(0.3);}
+  50% {transform: scale(0.6);}
+  100% {transform: scale(0.3);}
+
+}
+.beat {
+          animation: heartbeat 0.7s infinite;
+}
+</style>
+
+<script language="JavaScript" type="text/javascript">
+<!--- PASSWORD PROTECTION SCRIPT
+
+function TheLogin() {
+
+var password = 'minerva';
+
+if (this.document.login.pass.value == password) {
+  top.location.href="index.html";
+}
+else {
+  location.href="rc.html";
+  }
+}
+
+// End hiding --->
+</script>
+
+<script type="text/javascript">
+var reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+
+function loadFile() {
+    reader.open('get', 'images/shift_info.html', true); 
+    reader.onreadystatechange = displayContents;
+    reader.send(null);
+}
+function displayContents() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileRC() {
+    reader.open('get', 'images/rc_time.txt', true); 
+    reader.onreadystatechange = displayContentsRC;
+    reader.send(null);
+}
+function displayContentsRC() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('rc_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+function loadFileGMBrowser() {
+    reader.open('get', 'images/gmbrowser/gmbrowser_cycle_time.txt', true); 
+    reader.onreadystatechange = displayContentsGMBrowser;
+    reader.send(null);
+}
+function displayContentsGMBrowser() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('GMBrowser_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileMINOS() {
+    reader.open('get', 'images/minos_time.txt', true); 
+    reader.onreadystatechange = displayContentsMINOS;
+    reader.send(null);
+}
+function displayContentsMINOS() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('MINOS_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileVETO() {
+    reader.open('get', 'images/veto_time.txt', true); 
+    reader.onreadystatechange = displayContentsVETO;
+    reader.send(null);
+}
+function displayContentsVETO() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('VETO_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+function loadFileShiftSummary() {
+    reader.open('get', 'images/shift_summary_time.txt', true); 
+    reader.onreadystatechange = displayContentsShiftSummary;
+    reader.send(null);
+}
+function displayContentsShiftSummary() {
+    if(reader.readyState==4) {
+        var el = document.getElementById('ShiftSummary_main');
+        el.innerHTML = reader.responseText;
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<a name='top'>
+<table border='0' width='93%' align='left'>
+<td style="width:99%">
+
+<div id="textHead" align='center'>
+<a href="index.html"><img src="images/ShiftLowRes.png" width="4.0%" height="4.0%" align="left"></a><b>MINERvA Shift</b>
+</div>
+
+
+<!--Information for Expert Shifter and SOS-->
+    <div id="textOther" align='center'>
+    <div id="main">
+    <input type="button" style="background-color:lightgreen" value="Pager: Expert Shifter - 630-996-0092, SOS - 630-255-4094. Click for More Info." onclick="loadFile()"/>
+</div></div>
+<!--/div-->
+
+
+</td>
+<td style="width:5%"><div class="beat" style="font-size:50px;color:red" align="right">&hearts;<!--&#9825;&#10084;--></div>
+</td>
+</table> 
+
+
+<div align="center" style="width:93%; margin:0;" id="clockbox"></div>
+<div style="line-height:50%;"><br></div>
+
+
+<!--Links-->
+<div id="textLinks" style="width:93%;">
+<a href='index.html'>HOME</a><tab3>
+<a href='rc.html'>RunControl</a><tab3>
+<u>GMBrowser</u><tab3>
+<a href='minos.html'>MINOS</a><tab3>
+<a href='veto.html'>VetoHV</a><tab3>
+<a href='live.html'>LIVE</a><tab3>
+<a href='shift_summary.html'>ShiftSummary</a>
+</div>
+
+<div style="line-height:20%;"><br></div>
+
+<div id="textLinks2" style="width:93%;">
+<a href='links.html'>Links</a><tab2>
+<a href='http://dbweb0.fnal.gov/ECL/minerva/E/index' target="_blank">ECL</a><tab2>
+<a href='https://minervachat.slack.com/messages/minerva_shift/details/' target="_blank">Chat</a><tab2>
+<a href='https://cdcvs.fnal.gov/redmine/projects/minerva-ops/wiki/Minerva_Shift' target="_blank">Wiki</a><tab2>
+<!--a href='http://minerva-wbm.fnal.gov/minerva/echecklist/mininfo.php' target="_blank">e-checklist</a><tab2-->
+<a href='http://minerva-exp.fnal.gov/nusoft/echecklist/mininfo.php' target="_blank">echecklist</a><tab2>
+<a href='http://mnvevd1.fnal.gov/Glaucus/web/calendar2.html' target="_blank">Calendar</a><tab2>
+<a href='http://dbweb0.fnal.gov/ifbeam/numimon/Display' target="_blank">NuMI</a><tab2>
+<a href='http://minerva05.fnal.gov/Arachne/live.html' target="_blank">Arachne</a><tab2>
+<a href='web_status_A9_echecklist_minos_rocmuon.html' target="_blank">Misc.</a><tab2>
+<!--a href='https://www-bd.fnal.gov/Elog/' target="_blank">MCR</a><tab2-->
+<a href='http://minos-sb-cam01.fnal.gov/en/index.html' target="_blank">CAM-E</a><tab2>
+<a href='http://minervacam.fnal.gov/index.html?size=2&mode=0' target="_blank">CAM-U</a>
+</div>
+
+<div style="line-height:50%;"><br></div>
+
+<!--Images-->
+
+<!--a name='GMBrowser'><a href="images/GMBrowser.png">
+<img id="graph_gmbrowser" src='images/GMBrowser.png' style="border:2px solid red;" width='90%' alt='GMBrowser image is not available, wait few seconds.'></a><br>
+<br-->
+
+<div id="textOther" align='left' style="color:black"><a href="gmbrowser_old.html">GMBrowser Cycle</a></div>
+
+<div id="textOther">
+<a href="#DAQ_Detector">DAQ Detector</a><tab5>
+<a href="#Beam_Related">Beam Related</a><tab5>
+<a href="#Veto">Veto</a><tab5>
+<a href="#Numib_NHits">Numib NHits</a><tab5>
+<a href="#Numib_AvgQhi">Numib AvgQhi</a><tab5>
+<a href="#Linjc_NHits">Linjc NHits</a><tab5>
+<a href="#Linjc_AvgQhi">Linjc AvgQhi</a><tab5>
+<a href="#Pdstl_NHits">Pdstl NHits</a><tab5>
+<a href="#Pdstl_AvgQhi">Pdstl AvgQhi</a>
+</div> 
+
+<div style="line-height:20%;"><br></div>
+
+<a name='DAQ_Detector'></a>
+<div id="textMed" align='left' style="color:black">DAQ and Detector Status </div>
+
+<a name='DAQ_Header'><a href="images/gmbrowser/nearline00_DAQHeader.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline00_DAQHeader.gif' style="border:2px solid black;" width='30%' title="If there is a Readout Time above 200 ms (either on the plot or in the Overflow), note this run in the logbook." alt='DAQ_Header plot is not available, wait few seconds.'></a>
+
+<a name='Dead_Boards_Map'><a href="images/gmbrowser/nearline01_Dead_Boards_Map.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline01_Dead_Boards_Map.gif' style="border:2px solid black;" width='30%' title="If there is a red square in these plots, check the GMBrowser to see if the box is still red. If it isn't, send an email to the ES." alt='Dead_Boards_Map plot is not available, wait few seconds.'></a>
+
+<a name='High_Voltage'><a href="images/gmbrowser/nearline02_High_Voltage.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline02_High_Voltage.gif' style="border:2px solid black;" width='30%' title="Left: If there are entries with HV &lt; 600 Volts, contact ES. Right: If there are entries outside the peak, contact ES." alt='High_Voltage plot is not available, wait few seconds.'></a>
+
+<br><br><br><br>
+<!--br><br><br><br><br><br>
+<hr style="border-top: dotted 0.4vw; color:green"-->
+<!------------------------>
+<!--p>
+<a name='Beam_Related'></a>
+<div id="textMed" align='left' style="color:green">Beam Related<tab4><a href="#top"><font id="textOther" align='right'>Go to top</font></a>
+</div-->
+
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Beam_Related'></a><div id="textMed" align='left' style="color:green">Beam Related</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<!--a name='POT_vs_GATE'><a href="images/gmbrowser/nearline01_POT_vs_GATE.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline01_POT_vs_GATE.gif' style="border:2px solid green;" width='22.25%' title="These plots depend on beam intensity." alt='POT_vs_GATE plot is not available, wait few seconds.'></a-->
+
+<a name='Numi_Gate'><a href="images/gmbrowser/nearline03_Numi_Gate.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline03_Numi_Gate.gif' style="border:2px solid green;" width='30%' title="These plots depend on beam intensity." alt='Numi_Gate plot is not available, wait few seconds.'></a>
+
+<a name='Discriminators'><a href="images/gmbrowser/nearline04_Discriminators.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline04_Discriminators.gif' style="border:2px solid green;" width='30%' title="If there is a high peak (at least twice as high as the rest of the entries), please contact ES." alt='Discriminators plot is not available, wait few seconds.'></a>
+
+<a name='Calibrated_Time'><a href="images/gmbrowser/nearline05_Calibrated_Time.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline05_Calibrated_Time.gif' style="border:2px solid green;" width='30%' title="There should be a gap before the distribution (0 entries at 0). If there is no gap between 0 and the start of the distribution, contact Nur or Howard." alt='Calibrated_Time plot is not available, wait few seconds.'></a>
+
+<br><br><br><br>
+<!------------------------>
+
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Veto'></a><div id="textMed" align='left' style="color:green">Veto</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<a name='Veto_Electronics_Map'><a href="images/gmbrowser/nearline06_Veto_Electronics_Map.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline06_Veto_Electronics_Map.gif' style="border:2px solid green;" width='45%' title="The following channels should have entries: Top Left: 4 - 7, 27 - 30; Top Right: 1, 4, 6, 7, 25, 27, 28, 30; Bottom Left: 44 - 47, 51 - 54. The rest of the channels should be zero. If any channels are zero or especially hot or cold email Marianette or Dipak." alt='Veto_Electronics_Map plot is not available, wait few seconds.'></a>
+
+<a name='Veto_Physical_Map'><a href="images/gmbrowser/nearline07_Veto_Physical_Map.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline07_Veto_Physical_Map.gif' style="border:2px solid green;" width='45%' title="If one of these plots is completely white or one square is much hotter or colder than its neighbors, then contact Marianette or Dipak immediately." alt='Veto_Physical_Map plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br>
+<!------------------------>
+
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Numib_NHits'></a><div id="textMed" align='left' style="color:red">NuMI Beam NHits</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+
+<a name='Numib_NHits_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline08_Numib_NHits_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline08_Numib_NHits_Crate_0_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_NHits_Crate_0_Fired'><a href="images/gmbrowser/nearline09_Numib_NHits_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline09_Numib_NHits_Crate_0_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_NHits_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline10_Numib_NHits_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline10_Numib_NHits_Crate_1_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_NHits_Crate_1_Fired'><a href="images/gmbrowser/nearline11_Numib_NHits_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline11_Numib_NHits_Crate_1_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Numib_NHits_for_Strip'><a href="images/gmbrowser/nearline12_Numib_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline12_Numib_NHits_for_Strip.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Numib_NHits_for_Bar'><a href="images/gmbrowser/nearline13_Numib_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline13_Numib_NHits_for_Bar.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_NHits_for_Bar plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<!------------------------>
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Numib_AvgQhi'></a><div id="textMed" align='left' style="color:blue">NuMI Beam AvgQhi</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+
+<a name='Numib_AvgQhi_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline14_Numib_AvgQhi_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline14_Numib_AvgQhi_Crate_0_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_AvgQhi_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_AvgQhi_Crate_0_Fired'><a href="images/gmbrowser/nearline15_Numib_AvgQhi_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline15_Numib_AvgQhi_Crate_0_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_AvgQhi_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_AvgQhi_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline16_Numib_AvgQhi_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline16_Numib_AvgQhi_Crate_1_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_AvgQhi_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Numib_AvgQhi_Crate_1_Fired'><a href="images/gmbrowser/nearline17_Numib_AvgQhi_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline17_Numib_AvgQhi_Crate_1_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_AvgQhi_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Numib_Avg_Qhi_for_Strip'><a href="images/gmbrowser/nearline18_Avg_Qhi_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline18_Numib_Avg_Qhi_for_Strip.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_Avg_Qhi_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Numib_Avg_Qhi_for_Bar'><a href="images/gmbrowser/nearline19_Avg_Qhi_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline19_Numib_Avg_Qhi_for_Bar.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Numib_Avg_Qhi_for_Bar plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<!------------------------>
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Linjc_NHits'></a><div id="textMed" align='left' style="color:red">Light Injection NHits</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<a name='Linjc_NHits_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline20_Linjc_NHits_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline20_Linjc_NHits_Crate_0_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_NHits_Crate_0_Fired'><a href="images/gmbrowser/nearline21_Linjc_NHits_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline21_Linjc_NHits_Crate_0_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_NHits_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline22_Linjc_NHits_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline22_Linjc_NHits_Crate_1_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_NHits_Crate_1_Fired'><a href="images/gmbrowser/nearline23_Linjc_NHits_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline23_Linjc_NHits_Crate_1_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Linjc_NHits_for_Strip'><a href="images/gmbrowser/nearline24_Linjc_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline24_Linjc_NHits_for_Strip.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_NHits_for_Bar'><a href="images/gmbrowser/nearline25_Linjc_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline25_Linjc_NHits_for_Bar.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_NHits_for_Bar plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<!------------------------>
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Linjc_AvgQhi'></a><div id="textMed" align='left' style="color:blue">Light Injection AvgQhi</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<a name='Linjc_AvgQhi_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline26_Linjc_AvgQhi_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline26_Linjc_AvgQhi_Crate_0_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_AvgQhi_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_AvgQhi_Crate_0_Fired'><a href="images/gmbrowser/nearline27_Linjc_AvgQhi_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline27_Linjc_AvgQhi_Crate_0_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_AvgQhi_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_AvgQhi_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline28_Linjc_AvgQhi_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline28_Linjc_AvgQhi_Crate_1_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_AvgQhi_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_AvgQhi_Crate_1_Fired'><a href="images/gmbrowser/nearline29_Linjc_AvgQhi_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline29_Linjc_AvgQhi_Crate_1_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_AvgQhi_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Linjc_Avg_Qhi_for_Strip'><a href="images/gmbrowser/nearline30_Avg_Qhi_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline30_Linjc_Avg_Qhi_for_Strip.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_Avg_Qhi_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Linjc_Avg_Qhi_for_Bar'><a href="images/gmbrowser/nearline31_Avg_Qhi_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline31_Linjc_Avg_Qhi_for_Bar.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Linjc_Avg_Qhi_for_Bar plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<!------------------------>
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Pdstl_NHits'></a><div id="textMed" align='left' style="color:red">Pedestal NHits</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<a name='Pdstl_NHits_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline32_Pdstl_NHits_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline32_Pdstl_NHits_Crate_0_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_NHits_Crate_0_Fired'><a href="images/gmbrowser/nearline33_Pdstl_NHits_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline33_Pdstl_NHits_Crate_0_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_NHits_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline34_Pdstl_NHits_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline34_Pdstl_NHits_Crate_1_Not_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_NHits_Crate_1_Fired'><a href="images/gmbrowser/nearline35_Pdstl_NHits_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline35_Pdstl_NHits_Crate_1_Fired.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Pdstl_NHits_for_Strip'><a href="images/gmbrowser/nearline36_Pdstl_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline36_Pdstl_NHits_for_Strip.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_NHits_for_Bar'><a href="images/gmbrowser/nearline37_Pdstl_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline37_Pdstl_NHits_for_Bar.gif' style="border:2px solid red;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_NHits_for_Bar plot is not available, wait few seconds.'></a>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+<!------------------------>
+<table style="width:94%">
+  <tr>
+    <td align="left"><a name='Pdstl_AvgQhi'></a><div id="textMed" align='left' style="color:blue">Pedestal AvgQhi</div></td>
+    <td align="right"><a href="#top"><div id="textOther" align='right' style="color:black">Go to top</div></a></td>
+  </tr>
+</table>
+
+<a name='Pdstl_AvgQhi_Crate_0_Not_Fired'><a href="images/gmbrowser/nearline38_Pdstl_AvgQhi_Crate_0_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline38_Pdstl_AvgQhi_Crate_0_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_AvgQhi_Crate_0_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_AvgQhi_Crate_0_Fired'><a href="images/gmbrowser/nearline39_Pdstl_AvgQhi_Crate_0_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline39_Pdstl_AvgQhi_Crate_0_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_AvgQhi_Crate_0_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_AvgQhi_Crate_1_Not_Fired'><a href="images/gmbrowser/nearline40_Pdstl_AvgQhi_Crate_1_Not_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline40_Pdstl_AvgQhi_Crate_1_Not_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_AvgQhi_Crate_1_Not_Fired plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_AvgQhi_Crate_1_Fired'><a href="images/gmbrowser/nearline41_Pdstl_AvgQhi_Crate_1_Fired.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline41_Pdstl_AvgQhi_Crate_1_Fired.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_AvgQhi_Crate_1_Fired plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+
+<a name='Pdstl_Avg_Qhi_for_Strip'><a href="images/gmbrowser/nearline42_Avg_Qhi_NHits_for_Strip.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline42_Pdstl_Avg_Qhi_for_Strip.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_Avg_Qhi_for_Strip plot is not available, wait few seconds.'></a>
+
+<a name='Pdstl_Avg_Qhi_for_Bar'><a href="images/gmbrowser/nearline43_Avg_Qhi_NHits_for_Bar.gif">
+<img id="graph_minos" src='images/gmbrowser/nearline43_Pdstl_Avg_Qhi_for_Bar.gif' style="border:2px solid blue;" width='45%' title="If there are consecutive channels missing, put note in ECL, email minerva-ops, ES and RC. Missing more channels (1 or more PMT) contact ES." alt='Pdstl_Avg_Qhi_for_Bar plot is not available, wait few seconds.'></a>
+
+<!------------------------>
+<!------------------------>
+
+
+<table border='0' width='90%' align='left'>
+<tr>
+<td align="left">
+<div id="textOther" align='left'>Last Updated:</div>
+<div id="textOther" align='left'>
+<div id="GMBrowser_main" style="width: 15%; color:red; display: table-cell;">
+<input type="button" style="background-color:#ff9999" value="GMBrowser" onclick="loadFileGMBrowser()"/>
+</div>
+</div>
+</td>
+</tr>
+
+<td align="right">
+<div id="textOther">
+<a href="#top">Go to top</a></div>
+</td>
+<tr>
+<td align="middle">
+<div id="textOther">Contact <a href="https://userweb.jlab.org/~nur/">Nuruzzaman</a> (<a href="mailto:nur@fnal.gov">nur@fnal.gov</a>) for problems and comments.<script language="Javascript">document.write(" Last modified: " + document.lastModified +"");
+</script><br><br></div>
+</td>
+</tr>
+</table> 
+
+
+</body>
+
+</html>
